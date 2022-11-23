@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {MyCardClassContext} from './components/MyCardClassContext'
+import {MyContextColor} from './components/MyContextColor'
+import {MyCardClass} from './components/MyComponentClass'
+import {MyCardFunction} from './components/MyComponentFunction'
+import {MyCardFunctionContext} from './components/MyCardFunctionContext'
 
 function App() {
+  // Methode 2 With Provider
+  const obj = {color : "yellow", text:"CONTEXT App"}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Methode 1 Whitout Provider (use the defaultValue in Create Context './components/MyContextColor') */}
+
+      {/* Provider HERE */}
+      {/* <MyContextColor.Provider value={obj}> */}
+        <MyCardClass />
+        {/* <MyCardFunction color="lightblue" /> */}
+        {/* <MyCardClassContext /> */}
+        {/* <MyCardFunctionContext />/ */}
+      {/* </MyContextColor.Provider> */}
     </div>
   );
 }
+
+// CYCLE DE VIE 
+// Object parametrable attribut
 
 export default App;
